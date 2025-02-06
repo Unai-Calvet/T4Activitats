@@ -8,13 +8,17 @@ namespace T4Activitats {
             //Parella<double, string> parellaDoubleString = new Parella<double, string>(3.14, "text");
 
             //Exercici 2
+            const string Message = "Indrodueix un valor: ";
             int listArrayLenght;
 
             ArrayList arrayList = new ArrayList();
             listArrayLenght = Utils.AskIntValue();
-            for (int i = 0; i < listArrayLenght; i++) { 
+            for (int i = 0; i < listArrayLenght; i++) {
+                Console.WriteLine(Message);
                 arrayList.Add(Console.ReadLine());
             }
+            Console.Write("\n");
+            Utils.WriteArrayList(arrayList);
         }
     }
 }

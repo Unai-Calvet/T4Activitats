@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace T4Activitats {
     public static class Utils {
         public static int AskIntValue() {
-            const string Message = "Introdueix un valor enter"
+            const string Message = "Introdueix un valor enter: ";
             int intNum;
 
             Console.WriteLine(Message);
@@ -21,6 +22,11 @@ namespace T4Activitats {
                 return intNum;
             }
             return AskIntValue();
+        }
+        public static void WriteArrayList(ArrayList arrayList) {
+            foreach (var value in arrayList) {
+                Console.WriteLine(value);
+            }
         }
     }
 }
