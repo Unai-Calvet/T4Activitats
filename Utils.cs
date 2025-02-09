@@ -23,9 +23,24 @@ namespace T4Activitats {
             }
             return AskIntValue();
         }
+        public static string AskStringValue(string message) {
+            Console.WriteLine(message);
+            return Console.ReadLine() ?? "Nom desconegut";
+        }
+        public static string AskStringValue() {
+            const string Message = "Introdueix un valor de text";
+            Console.WriteLine(Message);
+            return Console.ReadLine() ?? "Nom desconegut";
+        }
+        public static int AskNaturalValue(string message) {
+            int num;
+            num = AskIntValue(message);
+            return num >= 0 ? num : AskNaturalValue(message);
+        }
+
         public static void WriteArrayList(ArrayList arrayList) {
-            foreach (var value in arrayList) {
-                Console.WriteLine(value);
+            foreach (var item in arrayList) {
+                Console.WriteLine(item);
             }
         }
     }
