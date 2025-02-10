@@ -38,8 +38,10 @@ namespace T4Activitats {
             return num >= 0 ? num : AskNaturalValue(message);
         }
 
-        public static void WriteArrayList(ArrayList arrayList) {
-            foreach (var item in arrayList) {
+        public static void WriteArrayList(ArrayList arrayList)
+        {
+            foreach (var item in arrayList)
+            {
                 Console.WriteLine(item);
             }
         }
