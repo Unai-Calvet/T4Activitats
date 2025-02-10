@@ -34,6 +34,7 @@ namespace T4Activitats {
                 age = Utils.AskNaturalValue(AskForAgeMessage);
                 dictionary.Add(name,age);
             }
+
             Console.Write("\n");
             foreach (var item in dictionary) {
                 Console.WriteLine($"{item.Key}: {item.Value}");
