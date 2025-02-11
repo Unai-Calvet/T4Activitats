@@ -39,25 +39,35 @@ namespace T4Activitats {
             //    Console.WriteLine($"{item.Key}: {item.Value}");
             //}
             // Exercici 4
-            const string AskListLengthMessage = "Introdueix el nombre d'elements de la llista";
-            const string AskNameMessage = "Introdueix un nom";
-            int listLenght;
-            List<string> list = new List<string>();
-            listLenght = Utils.AskIntValue(AskListLengthMessage);
-            for (int i = 0; i < listLenght; i++) {
-                list.Add(Utils.AskStringValue(AskNameMessage));
-            }
-            List<string> orderedList = new List<string>(list);
-            orderedList.Sort();
+            //const string AskListLengthMessage = "Introdueix el nombre d'elements de la llista";
+            //const string AskNameMessage = "Introdueix un nom";
+            //int listLenght;
+            //List<string> list = new List<string>();
+            //listLenght = Utils.AskIntValue(AskListLengthMessage);
+            //for (int i = 0; i < listLenght; i++) {
+            //    list.Add(Utils.AskStringValue(AskNameMessage));
+            //}
+            //List<string> orderedList = new List<string>(list);
+            //orderedList.Sort();
 
-            Console.WriteLine("\n");
-            foreach (var item in list) {
-                Console.WriteLine(item);
+            //Console.WriteLine("\n");
+            //foreach (var item in list) {
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine("\n");
+            //foreach (var item in orderedList) {
+            //    Console.WriteLine(item);
+            //}
+            // Exercici 5
+            int listLength;
+            List<int> list = new List<int>();
+            listLength = Utils.AskIntValue();
+            for (int i = 0; i < listLength; i++) { 
+                list.Add(Utils.AskIntValue());
             }
             Console.WriteLine("\n");
-            foreach (var item in orderedList) {
-                Console.WriteLine(item);
-            }
+            list = list.Where(x => x % 2 == 0).ToList();
+            list.ForEach(x => { Console.WriteLine(x); });
         }
     }
 }
