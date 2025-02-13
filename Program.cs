@@ -81,34 +81,43 @@ namespace T4Activitats {
             //Console.WriteLine(Message, (date - nowDate).TotalDays);
 
             // Exercici 7
-            string? stringArrayList = "";
-            ArrayList arrayList = new ArrayList();
-            arrayList.Add("Maria");
-            arrayList.Add("Joan");
-            arrayList.Add("Anna");
-            arrayList.Add(42);
-            arrayList.Add(true);
-            foreach (var item in arrayList) {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("--------------");
-            arrayList.Remove(42);
-            arrayList.Remove(true);
-            foreach (var item in arrayList) {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("--------------");
-            arrayList.Insert(1, "Pere");
-            foreach (var item in arrayList) {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("--------------");
-            Console.WriteLine(arrayList.Contains("Anna"));
-            Console.WriteLine("--------------");
-            foreach (var item in arrayList) {
-                stringArrayList += Convert.ToString($"{item}\n");
-            }
-            Console.WriteLine(stringArrayList);
+            //string? stringArrayList = "";
+            //ArrayList arrayList = new ArrayList();
+            //arrayList.Add("Maria");
+            //arrayList.Add("Joan");
+            //arrayList.Add("Anna");
+            //arrayList.Add(42);
+            //arrayList.Add(true);
+            //foreach (var item in arrayList) {
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine("--------------");
+            //arrayList.Remove(42);
+            //arrayList.Remove(true);
+            //foreach (var item in arrayList) {
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine("--------------");
+            //arrayList.Insert(1, "Pere");
+            //foreach (var item in arrayList) {
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine("--------------");
+            //Console.WriteLine(arrayList.Contains("Anna"));
+            //Console.WriteLine("--------------");
+            //foreach (var item in arrayList) {
+            //    stringArrayList += Convert.ToString($"{item}\n");
+            //}
+            //Console.WriteLine(stringArrayList);
+
+            // Exercici 8
+            List<int> list = new List<int> { 5, 10, 15, 20, 25 };
+            list.Add(30);
+            list.Insert(0, 7);
+            list.Remove(15);
+            list.OrderDescending();
+            List<int> pairList = list.Where(x => x % 2 == 0).ToList();
+            pairList.ForEach(x => Console.WriteLine(x));
         }
     }
 }
