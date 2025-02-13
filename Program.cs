@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Data;
 namespace T4Activitats { 
     public class ActT4 {
         public static void Main() {
@@ -18,7 +19,10 @@ namespace T4Activitats {
             //    arrayList.Add(Console.ReadLine());
             //}
             //Console.Write("\n");
-            //Utils.WriteArrayList(arrayList);
+            //foreach (var item in arrayList)
+            //{
+            //    Console.WriteLine(item);
+            //}
 
             // Exercici 3
             //const string AskForNameMessage = "Indrodueix un nom: ";
@@ -59,15 +63,21 @@ namespace T4Activitats {
             //    Console.WriteLine(item);
             //}
             // Exercici 5
-            int listLength;
-            List<int> list = new List<int>();
-            listLength = Utils.AskIntValue();
-            for (int i = 0; i < listLength; i++) { 
-                list.Add(Utils.AskIntValue());
-            }
-            Console.WriteLine("\n");
-            list = list.Where(x => x % 2 == 0).ToList();
-            list.ForEach(x => { Console.WriteLine(x); });
+            //int listLength;
+            //List<int> list = new List<int>();
+            //listLength = Utils.AskIntValue();
+            //for (int i = 0; i < listLength; i++) { 
+            //    list.Add(Utils.AskIntValue());
+            //}
+            //Console.WriteLine("\n");
+            //list = list.Where(x => x % 2 == 0).ToList();
+            //list.ForEach(x => { Console.WriteLine(x); });
+            // Exercici 6
+            const string Message = "Falten {0} dies per a la data introduida. ";
+            DateTime nowDate = DateTime.Today;
+            DateTime date;
+            date = Utils.AskFutureDateTime();
+            Console.WriteLine(Message, (date - nowDate).TotalDays);
         }
     }
 }
