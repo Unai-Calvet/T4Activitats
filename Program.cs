@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Data;
+using System.Runtime.InteropServices;
 namespace T4Activitats { 
     public class ActT4 {
         public static void Main() {
@@ -73,11 +74,41 @@ namespace T4Activitats {
             //list = list.Where(x => x % 2 == 0).ToList();
             //list.ForEach(x => { Console.WriteLine(x); });
             // Exercici 6
-            const string Message = "Falten {0} dies per a la data introduida. ";
-            DateTime nowDate = DateTime.Today;
-            DateTime date;
-            date = Utils.AskFutureDateTime();
-            Console.WriteLine(Message, (date - nowDate).TotalDays);
+            //const string Message = "Falten {0} dies per a la data introduida. ";
+            //DateTime nowDate = DateTime.Today;
+            //DateTime date;
+            //date = Utils.AskFutureDateTime();
+            //Console.WriteLine(Message, (date - nowDate).TotalDays);
+
+            // Exercici 7
+            string? stringArrayList = "";
+            ArrayList arrayList = new ArrayList();
+            arrayList.Add("Maria");
+            arrayList.Add("Joan");
+            arrayList.Add("Anna");
+            arrayList.Add(42);
+            arrayList.Add(true);
+            foreach (var item in arrayList) {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("--------------");
+            arrayList.Remove(42);
+            arrayList.Remove(true);
+            foreach (var item in arrayList) {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("--------------");
+            arrayList.Insert(1, "Pere");
+            foreach (var item in arrayList) {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("--------------");
+            Console.WriteLine(arrayList.Contains("Anna"));
+            Console.WriteLine("--------------");
+            foreach (var item in arrayList) {
+                stringArrayList += Convert.ToString($"{item}\n");
+            }
+            Console.WriteLine(stringArrayList);
         }
     }
 }
