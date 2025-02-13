@@ -109,7 +109,7 @@ namespace T4Activitats {
             //    stringArrayList += Convert.ToString($"{item}\n");
             //}
             //Console.WriteLine(stringArrayList);
-
+            
             // Exercici 8
             List<int> list = new List<int> { 5, 10, 15, 20, 25 };
             list.Add(30);
