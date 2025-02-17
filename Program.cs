@@ -119,7 +119,7 @@ namespace T4Activitats {
             list.OrderDescending();
             List<int> pairList = list.Where(x => x % 2 == 0).ToList();
             pairList.ForEach(x => Console.WriteLine(x));
-            */
+            
             // Exercici 9
             const string WriteDictionaryMessage = "Nom: {0}, Edat: {1}";
             const string AskAName = "Introdueix un nom: ";
@@ -139,8 +139,9 @@ namespace T4Activitats {
             foreach (var item in dictionary) {
                 Console.WriteLine(WriteDictionaryMessage, item.Key, item.Value);
             }
-
-
+            */
+            // Exercici 10
+            Utils.AskTwoDatesAndCompare();
         }
     }
 }

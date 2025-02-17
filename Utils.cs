@@ -102,5 +102,13 @@ namespace T4Activitats {
             num = AskIntValue(message);
             return num >= 0 ? num : AskNaturalValue(message);
         }
+
+        public static void AskTwoDatesAndCompare() {
+            DateTime firstDate;
+            DateTime secondDate;
+            firstDate = AskDateTime();
+            secondDate = AskDateTime();
+            Console.WriteLine(secondDate.CompareTo(firstDate) > 0? "La segona data es posterior a la primera" : "La segona data NO es posterior a la primera");
+        }
     }
 }
