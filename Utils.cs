@@ -115,5 +115,9 @@ namespace T4Activitats {
         public static string GetNowWeekDay() { 
             return DateTime.Now.DayOfWeek.ToString();
         }
+
+        public static int TotalYears(TimeSpan time) {
+            return (int) time.TotalDays / 365;
+        }
     }
 }
