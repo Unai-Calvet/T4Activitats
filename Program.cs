@@ -142,9 +142,14 @@ namespace T4Activitats {
             
             // Exercici 10
             Utils.AskTwoDatesAndCompare();
-            */
+            
             // Exercici 11
             Console.WriteLine(Utils.GetNowWeekDay());
+            */
+            // Exercici 12
+            Employee employee = new Employee();
+            DateTime birth = new DateTime(2006, 11, 14);
+            Console.WriteLine($"{employee.GetAge(birth)} anys");
         }
     }
 }
