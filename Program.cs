@@ -139,9 +139,12 @@ namespace T4Activitats {
             foreach (var item in dictionary) {
                 Console.WriteLine(WriteDictionaryMessage, item.Key, item.Value);
             }
-            */
+            
             // Exercici 10
             Utils.AskTwoDatesAndCompare();
+            */
+            // Exercici 11
+            Console.WriteLine(Utils.GetNowWeekDay());
         }
     }
 }
