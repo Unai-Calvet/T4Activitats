@@ -5,6 +5,7 @@ using System.Globalization;
 
 namespace T4Activitats {
     public static class Utils {
+
         /// <summary>
         /// Asks an int value to the user using the message passed as an argument and returns its value
         /// </summary>
@@ -21,6 +22,7 @@ namespace T4Activitats {
             }
             return AskIntValue();
         }
+
         /// <summary>
         /// Asks an int value written to the user and returns it
         /// </summary>
@@ -35,6 +37,7 @@ namespace T4Activitats {
             }
             return AskIntValue();
         }
+
         /// <summary>
         /// Asks a string value to the user using the message passed as an argument and returns its value
         /// </summary>
@@ -44,6 +47,7 @@ namespace T4Activitats {
             Console.WriteLine(message);
             return Console.ReadLine() ?? "Nom desconegut";
         }
+
         /// <summary>
         /// Asks a string value to the user and returns its value
         /// </summary>
@@ -53,6 +57,7 @@ namespace T4Activitats {
             Console.WriteLine(Message);
             return Console.ReadLine() ?? "Nom desconegut";
         }
+
         /// <summary>
         /// Asks a date value to the user and returns its value
         /// </summary>
@@ -70,6 +75,7 @@ namespace T4Activitats {
                 return AskDateTime();
             }
         }
+
         /// <summary>
         /// Asks a future date value to the user and returns its value
         /// </summary>
@@ -85,6 +91,7 @@ namespace T4Activitats {
 
             return AskFutureDateTime();
         }
+
         /// <summary>
         /// Asks a natural value to the user using the message passed as an argument and returns its value
         /// </summary>

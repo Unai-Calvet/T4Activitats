@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Data;
+using System.Globalization;
 using System.Runtime.InteropServices;
 namespace T4Activitats { 
     public class ActT4 {
@@ -109,7 +110,7 @@ namespace T4Activitats {
             //    stringArrayList += Convert.ToString($"{item}\n");
             //}
             //Console.WriteLine(stringArrayList);
-            
+            /*
             // Exercici 8
             List<int> list = new List<int> { 5, 10, 15, 20, 25 };
             list.Add(30);
@@ -118,6 +119,28 @@ namespace T4Activitats {
             list.OrderDescending();
             List<int> pairList = list.Where(x => x % 2 == 0).ToList();
             pairList.ForEach(x => Console.WriteLine(x));
+            */
+            // Exercici 9
+            const string WriteDictionaryMessage = "Nom: {0}, Edat: {1}";
+            const string AskAName = "Introdueix un nom: ";
+            int age;
+            string name;
+            Dictionary<string,int> dictionary = new Dictionary<string,int>();
+            dictionary.Add("Marc", 21);
+            dictionary.Add("Laura", 19);
+            dictionary.Add("Pau", 22);
+            foreach (var item in dictionary) {
+                Console.WriteLine(WriteDictionaryMessage, item.Key, item.Value);
+            }
+            Console.WriteLine("\n");
+            name = Utils.AskStringValue(AskAName);
+            Console.WriteLine(dictionary.TryGetValue(name, out age) ? $"L'estudiant indicat existeix, i la seva edat és: {age}." : "L'estudiant indicat no existeix. ");
+            dictionary.Remove("Laura");
+            foreach (var item in dictionary) {
+                Console.WriteLine(WriteDictionaryMessage, item.Key, item.Value);
+            }
+
+
         }
     }
 }
