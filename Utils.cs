@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 
 namespace T4Activitats {
-    public static class Utils {
+    public class Utils {
 
         /// <summary>
         /// Asks an int value to the user using the message passed as an argument and returns its value

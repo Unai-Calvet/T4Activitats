@@ -3,6 +3,8 @@ using System.Collections;
 using System.Data;
 using System.Globalization;
 using System.Runtime.InteropServices;
+using System.Runtime.Intrinsics.X86;
+using System.Xml.Linq;
 namespace T4Activitats { 
     public class ActT4 {
         public static void Main() {
@@ -145,11 +147,32 @@ namespace T4Activitats {
             
             // Exercici 11
             Console.WriteLine(Utils.GetNowWeekDay());
-            */
+            
             // Exercici 12
             Employee employee = new Employee();
             DateTime birth = new DateTime(2006, 11, 14);
             Console.WriteLine($"{employee.GetAge(birth)} anys");
+            */
+            // Exercici 13
+            List<Employee> employeesList = new List<Employee>();
+            List<SalesEmployee> salesEmployeesList = new List<SalesEmployee>();
+
+            employeesList.Add(new Employee("16/11/1982", "14/11/2006", "123456789A", 2100, 10, "Pepe", "García"));
+            employeesList.Add(new Employee("10/04/1981", "23/09/2008", "385639547H", 10, "Joana", "Fernàndez"));
+            employeesList.Add(new Employee("16/11/1982", "14/11/2016", "482593759B", 1900, "Alex", "Porta"));
+            employeesList.Add(new Employee("20/02/0023", "04/12/0034", "574659574K", "Leto", "Atreides"));
+            employeesList.Add(new Employee("13/12/1938", "04/04/1954", "836463746T", 450000, 52, "Shadam", "Corrino"));
+            employeesList = employeesList.OrderByDescending(n => n.GetJobTimeInYears()).ToList();
+            employeesList.ForEach(n => Console.WriteLine(n.ToString()));
+
+            salesEmployeesList.Add(new SalesEmployee("12/09/1957", "01/01/2021", "987654321D", 700, 50, 1.9f, "Hans", "Zimmer"));
+            salesEmployeesList.Add(new SalesEmployee("10/04/1981", "23/09/2008", "385639547H", 10, 1.1f, "Joana", "Fernàndez"));
+            salesEmployeesList.Add(new SalesEmployee("16/11/1982", "14/11/2006", "482593759B", 1900, 1.6f, "Alex", "Porta"));
+            salesEmployeesList.Add(new SalesEmployee("16/11/1982", "14/11/2016", "123456789A", 1.8f, "Pepe", "García"));
+            salesEmployeesList.Add(new SalesEmployee("13/07/1940", "04/12/1987", "000001701D", 1f, "Jean-Luc", "Picard"));
+            salesEmployeesList = salesEmployeesList.OrderByDescending(n => n.GetJobTimeInYears()).ToList();
+            salesEmployeesList.ForEach(n => Console.WriteLine(n.ToString()));
+
         }
     }
 }
