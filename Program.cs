@@ -188,12 +188,23 @@ namespace T4Activitats {
             list.Add(4);
             var even = list.Where(x => x%2 == 0);
             Console.WriteLine(string.Join(", ", even));
-            */
+            
             // Exercici 16
             List<string> list = new List<string>();
             string[] array = { "a", "string", "array", "to", "<stirng>", "list" };
             list = array.ToList();
             list.ForEach(x => Console.WriteLine(x));
+            */
+            // Exercici 17
+            Dictionary<string, int> dictionaryEmployeesSalary = new Dictionary<string, int>();
+
+            dictionaryEmployeesSalary.Add("person 1", 1000);
+            dictionaryEmployeesSalary.Add("person 2", 1200);
+            dictionaryEmployeesSalary.Add("person 3", 800);
+
+            foreach (var person in dictionaryEmployeesSalary) {
+                Console.WriteLine($"Name: {person.Key}, Salary: {person.Value}");
+            }
         }
     }
 }
