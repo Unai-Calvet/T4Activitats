@@ -152,7 +152,7 @@ namespace T4Activitats {
             Employee employee = new Employee();
             DateTime birth = new DateTime(2006, 11, 14);
             Console.WriteLine($"{employee.GetAge(birth)} anys");
-            */
+            
             // Exercici 13
             List<Employee> employeesList = new List<Employee>();
             List<SalesEmployee> salesEmployeesList = new List<SalesEmployee>();
@@ -172,7 +172,13 @@ namespace T4Activitats {
             salesEmployeesList.Add(new SalesEmployee("13/07/1940", "04/12/1987", "000001701D", 1f, "Jean-Luc", "Picard"));
             salesEmployeesList = salesEmployeesList.OrderByDescending(n => n.GetJobTimeInYears()).ToList();
             salesEmployeesList.ForEach(n => Console.WriteLine(n.ToString()));
-
+            */
+            //Exercici 14
+            List<int> list = new List<int>();
+            list.Add(1);
+            list.Add(2);
+            list.Add(3);
+            Console.WriteLine(list.Sum());
         }
     }
 }
