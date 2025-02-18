@@ -179,7 +179,7 @@ namespace T4Activitats {
             list.Add(2);
             list.Add(3);
             Console.WriteLine(list.Sum());
-            */
+            
             // Exercici 15
             List<int> list = new List<int>();
             list.Add(1);
@@ -188,6 +188,12 @@ namespace T4Activitats {
             list.Add(4);
             var even = list.Where(x => x%2 == 0);
             Console.WriteLine(string.Join(", ", even));
+            */
+            // Exercici 16
+            List<string> list = new List<string>();
+            string[] array = { "a", "string", "array", "to", "<stirng>", "list" };
+            list = array.ToList();
+            list.ForEach(x => Console.WriteLine(x));
         }
     }
 }
