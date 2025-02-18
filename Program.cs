@@ -194,7 +194,7 @@ namespace T4Activitats {
             string[] array = { "a", "string", "array", "to", "<stirng>", "list" };
             list = array.ToList();
             list.ForEach(x => Console.WriteLine(x));
-            */
+            
             // Exercici 17
             Dictionary<string, int> dictionaryEmployeesSalary = new Dictionary<string, int>();
 
@@ -205,6 +205,19 @@ namespace T4Activitats {
             foreach (var person in dictionaryEmployeesSalary) {
                 Console.WriteLine($"Name: {person.Key}, Salary: {person.Value}");
             }
+            */
+            // Exercici 18
+            const string AskListLengthMessage = "Introdueix la qunatitat de números de la llista: ";
+            const string AskFilterNumberMessage = "S'eliminaran els valors majors a: ";
+            List<int> list = new List<int>();
+            int length = Utils.AskIntValue(AskListLengthMessage);
+            int maxNumList;
+            for (int i = 0; i < length; i++) { 
+                list.Add(Utils.AskIntValue());
+            }
+            maxNumList = Utils.AskIntValue(AskFilterNumberMessage);
+            list.RemoveAll(x => x > maxNumList);
+            list.ForEach(x => Console.WriteLine(x));
         }
     }
 }
