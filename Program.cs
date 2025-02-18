@@ -172,13 +172,22 @@ namespace T4Activitats {
             salesEmployeesList.Add(new SalesEmployee("13/07/1940", "04/12/1987", "000001701D", 1f, "Jean-Luc", "Picard"));
             salesEmployeesList = salesEmployeesList.OrderByDescending(n => n.GetJobTimeInYears()).ToList();
             salesEmployeesList.ForEach(n => Console.WriteLine(n.ToString()));
-            */
+            
             //Exercici 14
             List<int> list = new List<int>();
             list.Add(1);
             list.Add(2);
             list.Add(3);
             Console.WriteLine(list.Sum());
+            */
+            // Exercici 15
+            List<int> list = new List<int>();
+            list.Add(1);
+            list.Add(2);
+            list.Add(3);
+            list.Add(4);
+            var even = list.Where(x => x%2 == 0);
+            Console.WriteLine(string.Join(", ", even));
         }
     }
 }
