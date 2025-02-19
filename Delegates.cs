@@ -7,11 +7,9 @@ namespace T4Activitats {
     {
         // Exercici 19
         public delegate int Operacio(int x, int y);
-        public static int Multiplicar(int x, int y) {
-            return x * y;
-        }
-        public static int Dividir(int x, int y) {
-            return x / y;
-        }
+        // Exercici 20
+        public static int ExecutarOperacio(int x, int y, Operacio ops) {
+            return ops(x, y);
+        } 
     }
 }

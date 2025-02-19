@@ -127,5 +127,23 @@ namespace T4Activitats {
         public static int TotalYears(TimeSpan time) {
             return (int) time.TotalDays / 365;
         }
+        /// <summary>
+        /// Multiplies the two integer numbers
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        public static int Multiplicar(int x, int y) {
+            return x * y;
+        }
+        /// <summary>
+        /// Divides the two integer numbers
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        public static int Dividir(int x, int y) {
+            return x / y;
+        }
     }
 }
