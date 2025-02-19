@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 
-namespace T4Activitats { 
+namespace T4Activitats {
     public class ActT4 {
         public static void Main() {
             /*
@@ -239,10 +239,15 @@ namespace T4Activitats {
             Action<int, int> actMultiplicar = (x, y) => Console.WriteLine(x * y);
             Console.WriteLine(Delegates.ExecutarOperacio(funcMultiplicar, 2, 5));
             Delegates.ExecutarOperacio(actMultiplicar, 2, 5);
-            */
+            
             // Exercici 23
             Delegates.Operacio operacio = (int x, int y) => (int)Math.Pow(x, y);
             Console.WriteLine(operacio(5,2)); 
+            */
+            //Exercici 24
+            Delegates.ExecutarAmbMetodeAnonim(delegate () { Console.WriteLine("patates"); });
+            Delegates.ExecutarAmbMetodeAnonim(delegate () { Console.WriteLine("Pax magnifica bellum gloriosum"); });
+
         }
     }
 }

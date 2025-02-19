@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 
 namespace T4Activitats {
@@ -15,7 +16,7 @@ namespace T4Activitats {
         public static void MostrarMissatgeConsola(string message) {
             Console.WriteLine(message);
         }
-        public static void MostrarMissatgeAmbEstreles(string message) { 
+        public static void MostrarMissatgeAmbEstreles(string message) {
             Console.WriteLine($"**********   {message}   **********");
         }
         // Exercici 22
@@ -25,7 +26,11 @@ namespace T4Activitats {
         public static void ExecutarOperacio(Action<int, int> operacio, int x, int y) {
             operacio(x, y);
         }
-        // Exercici 23
+        // Exercici 24
+        public delegate void MostrarMissatge();
         
+    public static void ExecutarAmbMetodeAnonim(MostrarMissatge mostrar) {
+            mostrar();
+        }
     }
 }
