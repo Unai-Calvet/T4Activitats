@@ -243,11 +243,14 @@ namespace T4Activitats {
             // Exercici 23
             Delegates.Operacio operacio = (int x, int y) => (int)Math.Pow(x, y);
             Console.WriteLine(operacio(5,2)); 
-            */
+            
             //Exercici 24
             Delegates.ExecutarAmbMetodeAnonim(delegate () { Console.WriteLine("patates"); });
             Delegates.ExecutarAmbMetodeAnonim(delegate () { Console.WriteLine("Pax magnifica bellum gloriosum"); });
-
+            */
+            // Exercici 25
+            Func<int, int, int> suma = (x,y) => x + y;
+            Console.WriteLine(suma(2, 2));
         }
     }
 }
