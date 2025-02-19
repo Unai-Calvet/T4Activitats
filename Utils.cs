@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 
 namespace T4Activitats {
-    public class Utils {
+    public static class Utils {
 
         /// <summary>
         /// Asks an int value to the user using the message passed as an argument and returns its value
@@ -112,10 +112,18 @@ namespace T4Activitats {
             secondDate = AskDateTime();
             Console.WriteLine(secondDate.CompareTo(firstDate) > 0? "La segona data es posterior a la primera" : "La segona data NO es posterior a la primera");
         }
+        /// <summary>
+        /// Gets today's day of the week
+        /// </summary>
+        /// <returns></returns>
         public static string GetNowWeekDay() { 
             return DateTime.Now.DayOfWeek.ToString();
         }
-
+        /// <summary>
+        /// Returns the years of a timeSpan value
+        /// </summary>
+        /// <param name="time"></param>
+        /// <returns></returns>
         public static int TotalYears(TimeSpan time) {
             return (int) time.TotalDays / 365;
         }
