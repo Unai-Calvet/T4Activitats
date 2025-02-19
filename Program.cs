@@ -242,7 +242,7 @@ namespace T4Activitats {
             */
             // Exercici 23
             Delegates.Operacio operacio = (int x, int y) => (int)Math.Pow(x, y);
-            Console.WriteLine(operacio(5,2));
+            Console.WriteLine(operacio(5,2)); 
         }
     }
 }
