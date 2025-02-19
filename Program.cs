@@ -222,10 +222,17 @@ namespace T4Activitats {
 
                 Console.WriteLine(mult(10,5));
                 Console.WriteLine(div(10,5));
-            */
+            
             // Exercici 20
             Console.WriteLine(Delegates.ExecutarOperacio(10, 5, Utils.Multiplicar));
             Console.WriteLine(Delegates.ExecutarOperacio(10, 5, Utils.Dividir));
+            */
+            // Exercici 21
+            const string Message = "Aquest es el missatge";
+            Delegates.Notificacio notificacio;
+            notificacio = Delegates.MostrarMissatgeConsola;
+            notificacio += Delegates.MostrarMissatgeAmbEstreles;
+            notificacio(Message);
         }
     }
 }
