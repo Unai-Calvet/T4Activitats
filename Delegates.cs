@@ -25,5 +25,7 @@ namespace T4Activitats {
         public static void ExecutarOperacio(Action<int, int> operacio, int x, int y) {
             operacio(x, y);
         }
+        // Exercici 23
+        
     }
 }
