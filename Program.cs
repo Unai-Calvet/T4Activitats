@@ -233,12 +233,16 @@ namespace T4Activitats {
             notificacio = Delegates.MostrarMissatgeConsola;
             notificacio += Delegates.MostrarMissatgeAmbEstreles;
             notificacio(Message);
-            */
+            
             // Exercici 22
             Func<int, int, int> funcMultiplicar = (x, y) => x * y;
             Action<int, int> actMultiplicar = (x, y) => Console.WriteLine(x * y);
             Console.WriteLine(Delegates.ExecutarOperacio(funcMultiplicar, 2, 5));
             Delegates.ExecutarOperacio(actMultiplicar, 2, 5);
+            */
+            // Exercici 23
+            Delegates.Operacio operacio = (int x, int y) => (int)Math.Pow(x, y);
+            Console.WriteLine(operacio(5,2)); 
         }
     }
 }
