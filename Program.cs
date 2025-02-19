@@ -226,13 +226,19 @@ namespace T4Activitats {
             // Exercici 20
             Console.WriteLine(Delegates.ExecutarOperacio(10, 5, Utils.Multiplicar));
             Console.WriteLine(Delegates.ExecutarOperacio(10, 5, Utils.Dividir));
-            */
+            
             // Exercici 21
             const string Message = "Aquest es el missatge";
             Delegates.Notificacio notificacio;
             notificacio = Delegates.MostrarMissatgeConsola;
             notificacio += Delegates.MostrarMissatgeAmbEstreles;
             notificacio(Message);
+            */
+            // Exercici 22
+            Func<int, int, int> funcMultiplicar = (x, y) => x * y;
+            Action<int, int> actMultiplicar = (x, y) => Console.WriteLine(x * y);
+            Console.WriteLine(Delegates.ExecutarOperacio(funcMultiplicar, 2, 5));
+            Delegates.ExecutarOperacio(actMultiplicar, 2, 5);
         }
     }
 }

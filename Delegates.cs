@@ -3,8 +3,7 @@ using System.Collections.Generic;
 
 
 namespace T4Activitats {
-    public static class Delegates
-    {
+    public static class Delegates {
         // Exercici 19
         public delegate int Operacio(int x, int y);
         // Exercici 20
@@ -18,6 +17,13 @@ namespace T4Activitats {
         }
         public static void MostrarMissatgeAmbEstreles(string message) { 
             Console.WriteLine($"**********   {message}   **********");
+        }
+        // Exercici 22
+        public static int ExecutarOperacio(Func<int, int, int> operacio, int x, int y) {
+            return operacio(x, y);
+        }
+        public static void ExecutarOperacio(Action<int, int> operacio, int x, int y) {
+            operacio(x, y);
         }
     }
 }
