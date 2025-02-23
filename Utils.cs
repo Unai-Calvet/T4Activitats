@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace T4Activitats {
     public static class Utils {
@@ -144,6 +145,17 @@ namespace T4Activitats {
         /// <returns></returns>
         public static int Dividir(int x, int y) {
             return x / y;
+        }
+        public static bool ContainsAny(string stringToCheck, string chars) {
+            List<char> charsList = new List<char>(chars.ToList());
+            List<bool> checkList = new List<bool>();
+            charsList.ForEach(c => checkList.Add(charsList.Contains(c)));
+            return checkList.Contains(true);
+        }
+        public static bool IsValidEmail(string email) {
+            string pattern = @"^([\w\.\-]+)@gmail.com$";
+            return Regex.IsMatch(email, pattern);
+            
         }
     }
 }

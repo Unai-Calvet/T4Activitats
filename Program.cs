@@ -245,12 +245,17 @@ namespace T4Activitats {
             Console.WriteLine(operacio(5,2)); 
             
             //Exercici 24
-            Delegates.ExecutarAmbMetodeAnonim(delegate () { Console.WriteLine("patates"); });
-            Delegates.ExecutarAmbMetodeAnonim(delegate () { Console.WriteLine("Pax magnifica bellum gloriosum"); });
-            */
-            // Exercici 25
+            const string mesg = "1";
+            Delegates.ExecutarAmbMetodeAnonim(delegate () { Console.WriteLine(mesg); });
+            Delegates.ExecutarAmbMetodeAnonim(delegate () { Console.WriteLine(mesg); });
+            
+            // Exercici 25 
             Func<int, int, int> suma = (x,y) => x + y;
             Console.WriteLine(suma(2, 2));
+            */
+            // Exercici 26
+            Console.WriteLine(Utils.IsValidEmail("usuari@gmail.com")); 
+            Console.WriteLine(Utils.IsValidEmail("usuari@gmail"));
         }
     }
 }
