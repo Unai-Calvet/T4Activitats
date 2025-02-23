@@ -252,10 +252,16 @@ namespace T4Activitats {
             // Exercici 25 
             Func<int, int, int> suma = (x,y) => x + y;
             Console.WriteLine(suma(2, 2));
-            */
+            
             // Exercici 26
             Console.WriteLine(Utils.IsValidEmail("usuari@gmail.com")); 
             Console.WriteLine(Utils.IsValidEmail("usuari@gmail"));
+            */
+            // Exercici 27
+            Console.WriteLine(Utils.IsValidPhoneNumber("+34 600 123 456"));
+            Console.WriteLine(Utils.IsValidPhoneNumber("+34600123456"));
+            Console.WriteLine(Utils.IsValidPhoneNumber("600123456"));
+            Console.WriteLine(Utils.IsValidPhoneNumber("60012345"));
         }
     }
 }
