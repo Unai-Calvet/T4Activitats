@@ -146,16 +146,23 @@ namespace T4Activitats {
         public static int Dividir(int x, int y) {
             return x / y;
         }
-        public static bool ContainsAny(string stringToCheck, string chars) {
-            List<char> charsList = new List<char>(chars.ToList());
-            List<bool> checkList = new List<bool>();
-            charsList.ForEach(c => checkList.Add(charsList.Contains(c)));
-            return checkList.Contains(true);
-        }
+        /// <summary>
+        /// Validates an email
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         public static bool IsValidEmail(string email) {
             string pattern = @"^([\w\.\-]+)@gmail.com$";
             return Regex.IsMatch(email, pattern);
-            
+        }
+        /// <summary>
+        /// Validates a spanish phone number
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public static bool IsValidPhoneNumber(string number) {
+            string pattern = @"^(\+34)? ?[6-7][0-9]{2} ?[0-9]{3} ?[0-9]{3}$";
+            return Regex.IsMatch(number, pattern);
         }
     }
 }
