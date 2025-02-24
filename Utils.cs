@@ -169,14 +169,17 @@ namespace T4Activitats {
         public static string ExtractNumbers(string text) { 
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < text.Length; i++) {
-                if (Regex.IsMatch(text[i].ToString(), @"^[0-9]$")) {
-                    while (i < text.Length && Regex.IsMatch(i.ToString(), @"[0-9]")) {
+                if (Regex.IsMatch(text[i].ToString(), @"[0-9]")) {
+                    
+                    while (i < text.Length && Regex.IsMatch(text[i].ToString(), @"[0-9]")) {
                         sb.Append(text[i]);
                         i++;
                     }
                     sb.Append(", ");
                 }
             }
+            Console.WriteLine(sb.Length);
+            sb.Remove(sb.Length - 2, 2);
             return sb.ToString();
         }
     }
