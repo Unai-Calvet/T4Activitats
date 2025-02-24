@@ -266,10 +266,14 @@ namespace T4Activitats {
             
             // Exercici 28
             Console.WriteLine(Utils.ExtractNumbers("Avui és el dia 12 del mes 02 de l'any 2024"));
-            */
+            
             // Exercici 29
             Console.WriteLine(Utils.IsValidPassword("Hola1234!"));
             Console.WriteLine(Utils.IsValidPassword("hola1234"));
+            */
+            // Exercici 30
+            Console.WriteLine(Utils.IsValidPostalCode("08001"));
+            Console.WriteLine(Utils.IsValidPostalCode("60000"));
         }
     }
 }

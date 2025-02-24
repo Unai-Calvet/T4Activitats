@@ -186,7 +186,11 @@ namespace T4Activitats {
             sb.Remove(sb.Length - 2, 2);
             return sb.ToString();
         }
-
+        /// <summary>
+        /// Validates a password
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public static bool IsValidPassword(string password) { 
             if (!(password.Length >= 8)) { 
                 return false; 
@@ -204,6 +208,14 @@ namespace T4Activitats {
                 return false;
             }
             return true;
+        }
+        /// <summary>
+        /// Validates spanish postal code
+        /// </summary>
+        /// <param name="postalCode"></param>
+        /// <returns></returns>
+        public static bool IsValidPostalCode(string postalCode) {
+            return (postalCode.Length == 5 && Regex.IsMatch(postalCode, @"^[01-52]"));
         }
     }
 }
