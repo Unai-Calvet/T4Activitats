@@ -165,7 +165,11 @@ namespace T4Activitats {
             string pattern = @"^(\+34)? ?[6-7][0-9]{2} ?[0-9]{3} ?[0-9]{3}$";
             return Regex.IsMatch(number, pattern);
         }
-
+        /// <summary>
+        /// Extracts the numbers from a string
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
         public static string ExtractNumbers(string text) { 
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < text.Length; i++) {
@@ -181,6 +185,25 @@ namespace T4Activitats {
             Console.WriteLine(sb.Length);
             sb.Remove(sb.Length - 2, 2);
             return sb.ToString();
+        }
+
+        public static bool IsValidPassword(string password) { 
+            if (!(password.Length >= 8)) { 
+                return false; 
+            }
+            if (!Regex.IsMatch(password, @"[A-Z]")) { 
+                return false;
+            }
+            if (!Regex.IsMatch(password, @"[a-z]")) {
+                return false;
+            }
+            if (!Regex.IsMatch(password, @"[0-9]")) {
+                return false;
+            }
+            if (!Regex.IsMatch(password, @"[\W]")) {
+                return false;
+            }
+            return true;
         }
     }
 }
