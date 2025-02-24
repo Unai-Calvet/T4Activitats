@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Text.RegularExpressions;
 
 namespace T4Activitats {
     public class ActT4 {
@@ -256,12 +257,15 @@ namespace T4Activitats {
             // Exercici 26
             Console.WriteLine(Utils.IsValidEmail("usuari@gmail.com")); 
             Console.WriteLine(Utils.IsValidEmail("usuari@gmail"));
-            */
+            
             // Exercici 27
             Console.WriteLine(Utils.IsValidPhoneNumber("+34 600 123 456"));
             Console.WriteLine(Utils.IsValidPhoneNumber("+34600123456"));
             Console.WriteLine(Utils.IsValidPhoneNumber("600123456"));
             Console.WriteLine(Utils.IsValidPhoneNumber("60012345"));
+            */
+            // Exercici 28
+            Console.WriteLine(Utils.ExtractNumbers("Avui és el dia 12 del mes 02 de l'any 2024"));
         }
     }
 }
