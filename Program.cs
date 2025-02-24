@@ -263,9 +263,13 @@ namespace T4Activitats {
             Console.WriteLine(Utils.IsValidPhoneNumber("+34600123456"));
             Console.WriteLine(Utils.IsValidPhoneNumber("600123456"));
             Console.WriteLine(Utils.IsValidPhoneNumber("60012345"));
-            */
+            
             // Exercici 28
             Console.WriteLine(Utils.ExtractNumbers("Avui és el dia 12 del mes 02 de l'any 2024"));
+            */
+            // Exercici 29
+            Console.WriteLine(Utils.IsValidPassword("Hola1234!"));
+            Console.WriteLine(Utils.IsValidPassword("hola1234"));
         }
     }
 }
