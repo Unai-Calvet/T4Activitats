@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace T4Activitats {
@@ -163,6 +164,20 @@ namespace T4Activitats {
         public static bool IsValidPhoneNumber(string number) {
             string pattern = @"^(\+34)? ?[6-7][0-9]{2} ?[0-9]{3} ?[0-9]{3}$";
             return Regex.IsMatch(number, pattern);
+        }
+
+        public static string ExtractNumbers(string text) { 
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < text.Length; i++) {
+                if (Regex.IsMatch(text[i].ToString(), @"^[0-9]$")) {
+                    while (i < text.Length && Regex.IsMatch(i.ToString(), @"[0-9]")) {
+                        sb.Append(text[i]);
+                        i++;
+                    }
+                    sb.Append(", ");
+                }
+            }
+            return sb.ToString();
         }
     }
 }
