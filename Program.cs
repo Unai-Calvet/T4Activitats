@@ -270,10 +270,32 @@ namespace T4Activitats {
             // Exercici 29
             Console.WriteLine(Utils.IsValidPassword("Hola1234!"));
             Console.WriteLine(Utils.IsValidPassword("hola1234"));
-            */
+            
             // Exercici 30
             Console.WriteLine(Utils.IsValidPostalCode("08001"));
             Console.WriteLine(Utils.IsValidPostalCode("60000"));
+            */
+            // Exercici 31
+            List<int> list = new List<int>();
+            list.Add(-65);
+            list.Add(-4);
+            list.Add(2);
+            list.Add(3);
+            list.Add(5);
+            list.Add(2);
+            list.Add(5);
+            list.Add(80);
+            list.Add(23);
+            list.Add(54);
+
+            List<int> modifiedList = list.Where(x => x % 2 == 0).ToList();
+            modifiedList.ForEach(x => Console.WriteLine(x));
+
+            modifiedList = list.Where(x => x > 0).ToList();
+            modifiedList.ForEach((x) => Console.WriteLine(x));
+
+            modifiedList = list.Where(x => x > 20).ToList();
+            modifiedList.ForEach((x) => Console.WriteLine($"{x}, {x*x}"));
         }
     }
 }
