@@ -1,0 +1,5 @@
+nom1 cognom1: 5,7
+nom2 cognom2: 7,8
+nom3 cognom3: 5
+nom4 cognom4: 4,9
+nom5 cognom5: 5,7

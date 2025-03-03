@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Text.RegularExpressions;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace T4Activitats {
     public class ActT4 {
@@ -223,58 +224,58 @@ namespace T4Activitats {
 
                 Console.WriteLine(mult(10,5));
                 Console.WriteLine(div(10,5));
-            
+
             // Exercici 20
             Console.WriteLine(Delegates.ExecutarOperacio(10, 5, Utils.Multiplicar));
             Console.WriteLine(Delegates.ExecutarOperacio(10, 5, Utils.Dividir));
-            
+
             // Exercici 21
             const string Message = "Aquest es el missatge";
             Delegates.Notificacio notificacio;
             notificacio = Delegates.MostrarMissatgeConsola;
             notificacio += Delegates.MostrarMissatgeAmbEstreles;
             notificacio(Message);
-            
+
             // Exercici 22
             Func<int, int, int> funcMultiplicar = (x, y) => x * y;
             Action<int, int> actMultiplicar = (x, y) => Console.WriteLine(x * y);
             Console.WriteLine(Delegates.ExecutarOperacio(funcMultiplicar, 2, 5));
             Delegates.ExecutarOperacio(actMultiplicar, 2, 5);
-            
+
             // Exercici 23
             Delegates.Operacio operacio = (int x, int y) => (int)Math.Pow(x, y);
             Console.WriteLine(operacio(5,2)); 
-            
+
             //Exercici 24
             const string mesg = "1";
             Delegates.ExecutarAmbMetodeAnonim(delegate () { Console.WriteLine(mesg); });
             Delegates.ExecutarAmbMetodeAnonim(delegate () { Console.WriteLine(mesg); });
-            
+
             // Exercici 25 
             Func<int, int, int> suma = (x,y) => x + y;
             Console.WriteLine(suma(2, 2));
-            
+
             // Exercici 26
             Console.WriteLine(Utils.IsValidEmail("usuari@gmail.com")); 
             Console.WriteLine(Utils.IsValidEmail("usuari@gmail"));
-            
+
             // Exercici 27
             Console.WriteLine(Utils.IsValidPhoneNumber("+34 600 123 456"));
             Console.WriteLine(Utils.IsValidPhoneNumber("+34600123456"));
             Console.WriteLine(Utils.IsValidPhoneNumber("600123456"));
             Console.WriteLine(Utils.IsValidPhoneNumber("60012345"));
-            
+
             // Exercici 28
             Console.WriteLine(Utils.ExtractNumbers("Avui és el dia 12 del mes 02 de l'any 2024"));
-            
+
             // Exercici 29
             Console.WriteLine(Utils.IsValidPassword("Hola1234!"));
             Console.WriteLine(Utils.IsValidPassword("hola1234"));
-            
+
             // Exercici 30
             Console.WriteLine(Utils.IsValidPostalCode("08001"));
             Console.WriteLine(Utils.IsValidPostalCode("60000"));
-            */
+
             // Exercici 31
             List<int> list = new List<int>();
             list.Add(-65);
@@ -296,6 +297,18 @@ namespace T4Activitats {
 
             modifiedList = list.Where(x => x > 20).ToList();
             modifiedList.ForEach((x) => Console.WriteLine($"{x}, {x*x}"));
+            */
+            // Exercici 32
+            string line;
+            string path = Path.GetFullPath(@"..\..\..\Files\notes.txt");
+            using (StreamWriter sw = new StreamWriter(path)) {
+                sw.WriteLine("nom1 cognom1: 5,7\nnom2 cognom2: 7,8\nnom3 cognom3: 5\nnom4 cognom4: 4,9\nnom5 cognom5: 5,7");
+            }
+            using (StreamReader sr = new StreamReader(path)) {
+                while ((line = sr.ReadLine()) != null) {
+                    Console.WriteLine(line);
+                }
+            }
         }
     }
 }
