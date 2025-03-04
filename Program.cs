@@ -1,5 +1,7 @@
-﻿using System;
+﻿using CsvHelper;
+using System;
 using System.Collections;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -297,7 +299,7 @@ namespace T4Activitats {
 
             modifiedList = list.Where(x => x > 20).ToList();
             modifiedList.ForEach((x) => Console.WriteLine($"{x}, {x*x}"));
-            */
+            
             // Exercici 32
             string line;
             string path = Path.GetFullPath(@"..\..\..\Files\notes.txt");
@@ -307,6 +309,28 @@ namespace T4Activitats {
             using (StreamReader sr = new StreamReader(path)) {
                 while ((line = sr.ReadLine()) != null) {
                     Console.WriteLine(line);
+                }
+            }
+            */
+            // Exercici 33
+            List<Alumne> alumnes = new List<Alumne> {
+                new Alumne("Joan", 30, "Barcelona"),
+                new Alumne("Maria", 25, "Madrid"),
+                new Alumne("Pepa", 19, "Barcelona"),
+                new Alumne("Pepe", 53, "Madrid"),
+                new Alumne()
+            };
+            string path = Path.GetFullPath(@"..\..\..\Files\alumnes.csv");
+            using (var writer = new StreamWriter(path))
+            using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture)) { 
+                csv.WriteRecords(alumnes);
+            }
+
+            using (var reader = new StreamReader(path))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture)) { 
+                var registres = csv.GetRecords<Alumne>();
+                foreach (var alumne in registres) {
+                    Console.WriteLine($"Nom: {alumne.Name}, Edat: {alumne.Age}, Ciutat: {alumne.City}");
                 }
             }
         }
