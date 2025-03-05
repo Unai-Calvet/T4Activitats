@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<llibres>
+  <llibre>
+    <titol>Dune</titol>
+    <autor>Frank Herbert</autor>
+    <any>1965</any>
+  </llibre>
+  <llibre>
+    <titol>Ubik</titol>
+    <autor>Philip K. Dick</autor>
+    <any>1969</any>
+  </llibre>
+</llibres>
