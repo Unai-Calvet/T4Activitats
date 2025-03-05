@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using System.Xml.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace T4Activitats {
@@ -311,7 +312,7 @@ namespace T4Activitats {
                     Console.WriteLine(line);
                 }
             }
-            */
+            
             // Exercici 33
             List<Alumne> alumnes = new List<Alumne> {
                 new Alumne("Joan", 30, "Barcelona"),
@@ -332,6 +333,35 @@ namespace T4Activitats {
                 foreach (var alumne in registres) {
                     Console.WriteLine($"Nom: {alumne.Name}, Edat: {alumne.Age}, Ciutat: {alumne.City}");
                 }
+            }
+            */
+            // Exercici 34
+            string path = Path.GetFullPath(@"..\..\..\Files\llibres.xml");
+            XDocument documetxml = new XDocument(
+                new XElement("llibres",
+                    new XElement("llibre", 
+                        new XElement("titol", "Dune"),
+                        new XElement("autor", "Frank Herbert"),
+                        new XElement("any", "1965")
+                    ),
+                    new XElement("llibre",
+                        new XElement("titol", "Ubik"),
+                        new XElement("autor", "Philip K. Dick"),
+                        new XElement("any", "1969")
+                    )
+                )
+            );
+            documetxml.Save(path);
+
+            XDocument documetXml = XDocument.Load(path);
+            var llibres = from llibre in documetXml.Descendants("llibre")
+                                 select new {
+                                     Title = llibre.Element("titol").Value,
+                                     Autor = llibre.Element("autor").Value,
+                                     Year = llibre.Element("any").Value
+                                 };
+            foreach (var llibre in llibres) {
+                Console.WriteLine($"Titol: {llibre.Title}, Autor: {llibre.Autor}, Any: {llibre.Year}");
             }
         }
     }
