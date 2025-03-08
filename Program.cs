@@ -1,7 +1,9 @@
 ﻿using CsvHelper;
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Globalization;
+using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -334,7 +336,7 @@ namespace T4Activitats {
                     Console.WriteLine($"Nom: {alumne.Name}, Edat: {alumne.Age}, Ciutat: {alumne.City}");
                 }
             }
-            */
+            
             // Exercici 34
             string path = Path.GetFullPath(@"..\..\..\Files\llibres.xml");
             XDocument documetxml = new XDocument(
@@ -362,6 +364,20 @@ namespace T4Activitats {
                                  };
             foreach (var llibre in llibres) {
                 Console.WriteLine($"Titol: {llibre.Title}, Autor: {llibre.Autor}, Any: {llibre.Year}");
+            }
+            */
+            // Exercci 35
+            string path = Path.GetFullPath(@"..\..\..\Files\llibres.json");
+            List<Book> llibres = new List<Book> { 
+                new Book("Ubik",  "Philip K. Dick", 1969),
+                new Book("Dune",  "Frank Herbert", 1965)
+            };
+            string jsoncontent = JsonConvert.SerializeObject(llibres, Formatting.Indented);
+            File.WriteAllText(path, jsoncontent);
+
+            List<Book> llistaLlibres = JsonConvert.DeserializeObject<List<Book>>(File.ReadAllText(path));
+            foreach (var llibre in llistaLlibres) {
+                Console.WriteLine($"Nom: {llibre.Title}, Autor: {llibre.Autor}, Any: {llibre.Year}");
             }
         }
     }
